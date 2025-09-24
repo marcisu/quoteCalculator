@@ -1,4 +1,4 @@
-Para Wendy, mi amor :)
+Para Wendy, mi amor 🥰
 
 1. Download files in a folder on desktop, 
 2. (if zip, uncompress by double clicking)
