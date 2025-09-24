@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(#FFFAFA 50%, #00BFFF 50%);
+}
+
+h1{
+    margin-bottom: 50px;
+    font-size: 1.8rem;
+    font-weight: 500;
+    text-align: center;
+}
+
+.container{
+    width: 500px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 1rem;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+label{
+    margin-bottom: 12px;
+    font-size: 14px;
+    font-weight: 400;
+    /* Add bolding, make bigger,  */
+}
+
+textarea, input, select{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    font-weight: 400;
+    border-radius: 6px;
+    margin-bottom: 15px;
+    border: 1px solid #999;
+    resize: none;
+}
+
+/* Input + textarea placeholder text */
+input::placeholder,
+textarea::placeholder {
+    color: #626262;   /* exact match to select */
+    opacity: 1;    /* remove browser’s default opacity (Chrome applies ~0.54) */
+}
+
+select:invalid {
+    color: #626262;
+}
+
+/* When user selects a real option, use normal text color */
+select option {
+    color: #000;
+}
+select option[value=""] {
+    color: #656565;
+}
+
+.buttons{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+
+button{
+    padding: 10px;
+    font-size: 15px;
+    width: 50%;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #35302d;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+h2{
+    margin-bottom: 10px;
+    font-size: 1.7rem;
+    font-weight: 500;
+}
+
+#result{
+    font-size: 13px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    min-height: 100px;
+    overflow: hidden;
+}

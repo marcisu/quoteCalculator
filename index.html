@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Quote Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <h1>Quote Calculator</h1>
+
+    <!-- Form for quote calculation -->
+    <form id="quote-form" novalidate>
+      <!-- List price (REQUIRED) -->
+      <div class="field">
+        <label for="list-price">List price</label>
+        <input
+          id="list-price"
+          name="listPrice"
+          type="number"
+          inputmode="decimal"
+          placeholder="Enter price"
+          step="0.01"
+          min="0"
+          required
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Optional cylinder price (OPTIONAL) -->
+      <div class="field">
+        <label for="cylinder">Cylinder price (Optional)</label>
+        <input
+          id="cylinder"
+          name="cylinderPrice"
+          type="number"
+          inputmode="decimal"
+          placeholder="Enter price"
+          step="0.01"
+          min="0"
+          autocomplete="off"
+        />
+      </div>
+
+      <!-- Discount tier (REQUIRED) -->
+      <div class="field">
+        <label for="discount">Discount tier</label>
+        <select id="discount" name="discountTier" required>
+            <option value="" disabled selected hidden>Select tier</option>
+            <option value="TierA">Tier A (29% off)</option>
+            <option value="TierB">Tier B (22% off)</option>
+            <option value="TierC">Tier C (15% off)</option>
+            <option value="TierD">Tier D (8% off)</option>
+            <option value="None">No discount</option>
+        </select>
+      </div>
+
+      <div class="buttons">
+        <button type="submit" id="calc-btn">Calculate price</button>
+        <button type="reset" class="secondary">Clear</button>
+      </div>
+
+      <!-- Results -->
+      <h2>Total</h2>
+      <div id="total" aria-live="polite" role="status">$0.00</div>
+    </form>
+  </main>
+
+  <script src="index.js" defer></script>
+</body>
+</html>
