@@ -1,7 +1,27 @@
 "use strict";
 
 // ===== Config =====
-var CURRENCY_SYMBOL = "$"; // Can change to "USD $", "€", etc.
+var CURRENCY_SYMBOL = "USD$"; // Can change to "USD $", "€"...
+var currencySel = document.getElementById("currencySel");
+var CURRENT_CURRENCY = "USD";
+
+if (currencySel) {
+    currencySel.addEventListener("change", function () {
+        CURRENT_CURRENCY = currencySel.value;
+        CURRENCY_SYMBOL = (CURRENT_CURRENCY === "CAD") ? "CAD$" : "USD$";
+        // // Re-run calculation to refresh UI with new currency
+        // var res = calculate();
+        // if (res.ok) updateTotalUI(res);
+
+        // Reset everything when currency changes
+        resetAllQuoteUI();
+
+        // Also reset the total display
+        if (totalEl) {
+            totalEl.textContent = fmtMoney(0);
+        }
+    });
+}
 
 // Discount tiers as NET multipliers after discount, in basis points (1 bp = 0.0001)
 // e.g. 0.71 => 7100 (71.00%)
